@@ -15,8 +15,10 @@
 
 coverage.out
 *.coverprofile
-# Diretórios padrão do Go
+# Diretórios padrão do go e inputs e outputs da aplicacao
 /pkg/
+/input/
+/output/
 
 /vendor/
 # Arquivos temporários e de log
@@ -24,6 +26,7 @@ coverage.out
 *.tmp
 *.temp
 *.out
+*.html
 # Variáveis de ambiente
 .env
 .env.local

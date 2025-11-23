@@ -12,7 +12,7 @@ import (
 	"github.com/yuin/goldmark"
 )
 
-const outputFilename = "output.html"
+const outputFilename = "output/output.html"
 
 /* convertMarkdownToHTML converte um markdown local em HTML usando a lib goldmark */
 func convertMarkdownToHTML(markdown []byte) (string, error) {
@@ -46,7 +46,7 @@ func openBrowser(filepath string) error {
 
 func main() {
 	if len(os.Args) < 2 {
-		log.Fatal("uso: go run main.go <arquivo.md>")
+		log.Fatal("exemplo de uso: go run main.go <input/arquivo.md>")
 	}
 	filename := os.Args[1]
 	content, err := ioutil.ReadFile(filename)
