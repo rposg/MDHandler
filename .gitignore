@@ -1,0 +1,38 @@
+
+# binários e libs
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+
+/bin/
+/build/
+/dist/
+# Binários de teste
+*.test
+
+coverage.out
+*.coverprofile
+# Diretórios padrão do Go
+/pkg/
+
+/vendor/
+# Arquivos temporários e de log
+*.log
+*.tmp
+*.temp
+*.out
+# Variáveis de ambiente
+.env
+.env.local
+# IDE
+.idea/
+*.iml
+.vscode/
+# macOS
+.DS_Store
+#  cache
+.cache/
+
