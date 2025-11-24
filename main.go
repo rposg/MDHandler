@@ -4,15 +4,26 @@ import (
 	"bytes"
 	"fmt"
 	"io/ioutil"
-	"log"
+	//"log"
 	"os"
 	"os/exec"
 	"runtime"
 
+	log "github.com/sirupsen/logrus"
 	"github.com/yuin/goldmark"
 )
 
 const outputFilename = "output/output.html"
+
+func init() {
+	file, err := os.OpenFile("mdhandler.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	if err != nil {
+		log.Fatalf("Falha ao abrir o arquivo: %v", err)
+	}
+
+	log.SetOutput(file)
+	log.SetLevel(log.InfoLevel)
+}
 
 /* convertMarkdownToHTML converte um markdown local em HTML usando a lib goldmark */
 func convertMarkdownToHTML(markdown []byte) (string, error) {
@@ -41,6 +52,8 @@ func openBrowser(filepath string) error {
 	}
 
 	log.Printf("Abrindo o arquivo %s no navegador...", filepath)
+	log.WithField("filepath", filepath).Info("Abrindo arquivo no navegador")
+
 	return cmd.Start()
 }
 
