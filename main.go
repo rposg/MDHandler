@@ -82,6 +82,7 @@ func main() {
 	log.Printf("Arquivo Html salvo em %s", outputFilename)
 
 	// Tenta abrir o arquivo HTML no navegador do usuário
+
 	if err := openBrowser(outputFilename); err != nil {
 		log.Printf(" Warning: Não foi possível abrir o navegador e mostrar o conteúdo do html gerado: %v", err)
 	} else {
